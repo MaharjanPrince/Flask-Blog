@@ -1,0 +1,14 @@
+{
+    "admin@demo.com": {
+        "name": "Adminn",
+        "password": "password"
+    },
+    "test@example.com": {
+        "name": "Prince",
+        "password": "1234455"
+    },
+    "maharjanxprince@gmail.com": {
+        "name": "Maharjan",
+        "password": "12345"
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register - flaskBLOG</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body,
+        html {
+            height: 100%;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .register-container {
+            background: white;
+            padding: 2.5rem 3rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+        }
+
+        .register-title {
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            color: #343a40;
+        }
+
+        .form-control {
+            border-radius: 0.375rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+        }
+
+        .btn-register {
+            margin-top: 1.4rem;
+            width: 100%;
+            font-weight: 600;
+            padding: 0.55rem;
+            border-radius: 0.375rem;
+        }
+
+        .login-link {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2 class="register-title">Create an Account</h2>
+        <form method="POST" action="/register">
+            <div class="mb-3 text-start">
+                <label for="name" class="form-label">Name</label>
+                <input type="nanme" class="form-control" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+            <div class="mb-3 text-start">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required />
+            </div>
+            <div class="mb-3 text-start">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+                    required />
+            </div>
+            <button type="submit" class="btn btn-success btn-register">
+                Register
+            </button>
+        </form>
+        {% if error %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ error }}
+            <button type="button" class="btn" data-bs-dismiss="alert"></button>
+        </div>
+        {% endif %}
+        <div class="login-link">
+            Already have an account?
+            <a href="/login">Login</a>
+        </div>
+
+    </div>
+</body>
+
+</html>
