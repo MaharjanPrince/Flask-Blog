@@ -10,5 +10,9 @@
     "maharjanxprince@gmail.com": {
         "name": "Maharjan",
         "password": "12345"
+    },
+    "random.guy@xyz.com": {
+        "name": "Random Guy",
+        "password": "12345"
     }
 }

@@ -37,8 +37,10 @@ def login():
             session['mail'] = mail
             session['name'] = user['name']
             return redirect(url_for('blogs'))
-        return "Invalid credentials"
-    return render_template('login.html')
+        else:
+            error = "Invalid Email or password"
+            return render_template('login.html', error = error)
+    return render_template('login.html', error=None)
 
 
 #Registering Users
