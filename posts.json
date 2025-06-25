@@ -8,5 +8,15 @@
         "title": "Blog #2 ",
         "content": "Whats left is to make a see blogs by others page ",
         "author": "Maharjan"
+    },
+    {
+        "title": "Test Blog",
+        "content": "This is blog by Random Guy",
+        "author": "Maharjan"
+    },
+    {
+        "title": "Blog by Admin",
+        "content": "The other post looking good\r\n",
+        "author": "Adminn"
     }
 ]

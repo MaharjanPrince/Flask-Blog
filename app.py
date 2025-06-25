@@ -36,7 +36,7 @@ def login():
         if user and user['password'] == pwd:
             session['mail'] = mail
             session['name'] = user['name']
-            return redirect(url_for('blogs'))
+            return redirect(url_for('viewBlog'))
         else:
             error = "Invalid Email or password"
             return render_template('login.html', error = error)
@@ -78,7 +78,7 @@ def blogs():
     # Filter only posts by this user
     user_posts = [p for p in all_posts if p['author'] == user_name]
 
-    return render_template('blog.html', posts=user_posts, user=user_name)
+    return render_template('yourblog.html', posts=user_posts, user=user_name)
 
 
 #route to addd posts
@@ -119,6 +119,13 @@ def addBlogs():
     return render_template('add.html')
 
 
+@app.route('/index', methods = ['GET'])
+def viewBlog():
+    all_posts = load_post()
+    others_post = [p for p in all_posts if p['author'] != session['name']]
+
+    return render_template('blog.html', posts = others_post, user = session['name'])
+    
 
 @app.route('/logout')
 def logout():
